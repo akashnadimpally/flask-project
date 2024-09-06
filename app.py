@@ -19,10 +19,10 @@ user_model = api.model('User', {
 def create_db_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
-            database='flaskdb',
-            user='flaskuser',
-            password='flaskpassword'
+            host='skynetserverdev.mysql.database.azure.com',
+            database='flasks',
+            user='skynetadmindev',
+            password='Admin@123456'
         )
         if connection.is_connected():
             return connection

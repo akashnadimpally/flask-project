@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/flaskdb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@Azure" uuid="fc55fd58-3c39-4d4b-92a6-09d5b82ecdce">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://skynetserverdev.mysql.database.azure.com:3306/flasks</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
