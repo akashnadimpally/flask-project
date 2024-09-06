@@ -20,9 +20,9 @@ def create_db_connection():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            database='skynet007dev-database',
-            user='kmywrwzdtj',
-            password='9IPQzk$8RofQ$jHH'
+            database='flaskdb',
+            user='flaskuser',
+            password='flaskpassword'
         )
         if connection.is_connected():
             return connection
