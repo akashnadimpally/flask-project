@@ -79,7 +79,7 @@ jobs:
 
   DeployToAPIM:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
