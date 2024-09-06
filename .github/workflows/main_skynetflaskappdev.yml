@@ -76,7 +76,6 @@ jobs:
           app-name: 'skynetflaskappdev'
           slot-name: 'Production'
 
-
   DeployToAPIM:
     runs-on: ubuntu-latest
     needs: deploy
@@ -95,8 +94,33 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9C43D36171AB4B8EB080E167E5BE1490 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D901C46BE4EE4948AA1DDD9A7C72BA5E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AB79BC041EB147F598E7A014297BADF4 }}
+
       - name: Install Terraform
-        uses: little-core-labs/install-terraform@v2.0.0
-        with: 
-          version: 1.9.5
-          
+        uses: hashicorp/setup-terraform@v2.0.3
+        with:
+          terraform_version: latest
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./TF
+
+      - name: terraform validate
+        run: terraform validate
+        working-directory: ./TF
+
+      - name: terraform plan
+        run: terraform plan
+        working-directory: ./TF
+
+      - name: terraform apply
+        run: terraform apply -auto-approve
+        working-directory: ./TF
+
+
+

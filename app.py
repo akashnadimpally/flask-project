@@ -102,9 +102,9 @@ class User(Resource):
         return {"message": "User deleted successfully!"}
 
 # Save the swagger.json file to the local file system
-# @app.route('/swagger.json')
-# def swagger_json():
-#     return jsonify(api.__schema__)  # This generates the OpenAPI spec (swagger.json)
+@app.route('/swagger.json')
+def swagger_json():
+    return jsonify(api.__schema__)  # This generates the OpenAPI spec (swagger.json)
 
 
 if __name__ == '__main__':
