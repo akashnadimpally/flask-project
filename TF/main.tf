@@ -34,6 +34,11 @@ resource "azurerm_api_management_api" "skynet_api" {
     content_format = "openapi"  # OpenAPI specification format
     content_value  = file("${path.module}/../swagger.json")  # Path to the swagger.json file
   }
+
+  subscription_required    = true
+  is_current               = true
+  revision_description = "Initial API version"
+
 }
 
 resource "azurerm_api_management_backend" "apim_backend" {
