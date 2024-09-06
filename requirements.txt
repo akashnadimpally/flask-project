@@ -1,0 +1,5 @@
+Flask
+mysql-connector-python
+flask-swagger-ui
+flask-restful
+flask-restx

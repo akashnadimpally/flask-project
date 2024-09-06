@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: flaskdb
+      MYSQL_USER: flaskuser
+      MYSQL_PASSWORD: flaskpassword
+    ports:
+      - "3306:3306"
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+
+#volumes:
+#  mysql-data:
