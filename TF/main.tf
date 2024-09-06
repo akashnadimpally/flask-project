@@ -36,7 +36,6 @@ resource "azurerm_api_management_api" "skynet_api" {
   }
 
   subscription_required    = true
-  is_current               = true
   revision_description = "Initial API version"
 
 }
