@@ -21,7 +21,7 @@ resource "azurerm_api_management_api" "skynet_api" {
   api_management_name = "skynetapimdev"
   revision            = "v1"  # API revision
   display_name        = "Skynet Flask API"  # Display name of the API
-  path                = "skynetflaskapi"  # Path for the API
+  path                = ""  # Path for the API
   protocols           = ["http"]
 
   # Reference the OpenAPI specification file from the root folder
